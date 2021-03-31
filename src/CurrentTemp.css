@@ -1,0 +1,20 @@
+.CurrentTemp {
+  color: white;
+}
+
+.CurrentTemp h4 {
+  display: inline-block;
+  font-size: 62px !important;
+  padding-left: 43px;
+}
+
+.CurrentTemp .current-temps p {
+  text-align: center;
+  font-size: 25px;
+  padding-left: 10px;
+}
+
+.CurrentTemp .max-temp {
+  position: relative;
+  right: 15px;
+}

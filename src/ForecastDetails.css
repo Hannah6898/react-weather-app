@@ -1,0 +1,18 @@
+.ForecastDetails {
+  color: white;
+  margin-left: 14px;
+  color: black;
+}
+
+.ForecastDetails img {
+  width: 50px;
+  position: relative;
+  right: 10px;
+  bottom: 10px;
+}
+
+.ForecastDetails .temp {
+  position: relative;
+  right: 10px;
+  font-size: 15px;
+}

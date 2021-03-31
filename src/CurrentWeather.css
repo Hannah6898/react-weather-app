@@ -1,0 +1,70 @@
+.CurrentWeather .search-bar {
+  width: 90%;
+  margin: 20px;
+  padding-top: 10px;
+  border: none;
+}
+
+.CurrentWeather .btn {
+  background-color: white !important;
+  color: #634cff !important;
+  border: none;
+  transition: all 2ms ease-in-out;
+}
+
+.CurrentWeather .current-btn,
+.search-btn {
+  margin-left: 10px !important;
+}
+
+.CurrentWeather .btn:hover {
+  background: #634cff !important;
+  color: white !important;
+  border: white !important;
+}
+
+.CurrentWeather .current-location {
+  font-size: 8px;
+}
+
+.CurrentWeather h1 {
+  display: block;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 30px !important;
+  color: white;
+}
+
+.CurrentWeather .Location {
+  text-align: center;
+  color: white;
+}
+
+.CurrentWeather h2 {
+  display: inline-block;
+  font-size: 20px !important;
+  text-align: center;
+}
+
+.CurrentWeather i {
+  font-size: 18px;
+}
+
+.CurrentWeather h3 {
+  display: block;
+  text-align: center;
+  font-size: 18px !important;
+  color: white;
+}
+
+.CurrentWeather img {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+}
+
+.CurrentWeather .description {
+  margin: 10px 0 20px 0;
+  text-align: center;
+  color: white;
+}

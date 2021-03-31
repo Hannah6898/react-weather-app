@@ -1,0 +1,13 @@
+.WeatherDetails hr {
+  color: #1b115f !important;
+  height: 2px !important;
+  width: 80%;
+}
+
+.details p {
+  margin: 0;
+}
+
+.WeatherDetails h5 {
+  font-size: 20px;
+}
