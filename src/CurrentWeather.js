@@ -1,35 +1,38 @@
 import React, { useState } from "react";
 import sun from "./sun.png";
 import axios from "axios";
-
 import "./CurrentWeather.css";
+
 export default function CurrentWeather() {
   const [city, onCity] = useState(null);
-  const [cityUpdate, onCityUpdate] = useState(null);
-  const [description, onDescription] = useState(null);
-  const [currentTemp, setCurrentTemp] = useState(null);
-  const [minTemp, setMinTemp] = useState(null);
-  const [maxTemp, setMaxTemp] = useState(null);
-  const [humidity, setHumidity] = useState(null);
-  const [wind, setWind] = useState(null);
+  const [cityUpdate, onCityUpdate] = useState("London");
+  const [description, onDescription] = useState("Sunny");
+  const [currentTemp, setCurrentTemp] = useState("10");
+  const [minTemp, setMinTemp] = useState("5");
+  const [maxTemp, setMaxTemp] = useState("15");
+  const [humidity, setHumidity] = useState("50");
+  const [wind, setWind] = useState("2");
+  const [feelsLike, setFeelsLike] = useState("10");
+  const [icon, setIcon] = useState(sun);
 
   let weatherData = {
     date: "Thur 11 Mar",
     time: "19:00",
-    feelsLike: "9",
-    humidty: "53",
-    wind: "8",
   };
 
   function showLocationInfo(response) {
-    console.log(response.data.main.temp);
-    onCityUpdate(response.data.name);
-    onDescription(response.data.weather[0].description);
-    setCurrentTemp(Math.round(response.data.main.temp));
-    setMinTemp(Math.round(response.data.main.temp_min));
-    setMaxTemp(Math.round(response.data.main.temp_max));
-    setHumidity(response.data.main.humidity);
-    setWind(Math.round(response.data.wind.speed));
+    let currentWeather = response.data;
+    onCityUpdate(currentWeather.name);
+    onDescription(currentWeather.weather[0].description);
+    setCurrentTemp(Math.round(currentWeather.main.temp));
+    setMinTemp(Math.round(currentWeather.main.temp_min));
+    setMaxTemp(Math.round(currentWeather.main.temp_max));
+    setHumidity(currentWeather.main.humidity);
+    setWind(Math.round(currentWeather.wind.speed));
+    setFeelsLike(Math.round(currentWeather.main.feels_like));
+    setIcon(
+      `http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`
+    );
   }
 
   function handleSubmit(event) {
@@ -43,8 +46,6 @@ export default function CurrentWeather() {
   function updateCity(event) {
     onCity(event.target.value);
   }
-
-  //When the city name is submit the date, time and weather description change
 
   return (
     <div className="CurrentWeather">
@@ -83,7 +84,7 @@ export default function CurrentWeather() {
           </div>
         </div>
         <h3>{weatherData.time}</h3>
-        <img src={sun} alt="sun" />
+        <img src={icon} alt="icon" />
         <div className="description">
           <span>{description}</span>
         </div>
@@ -122,7 +123,7 @@ export default function CurrentWeather() {
                             <p>Feels Like</p>
                           </div>
                           <div className="col-4">
-                            <p>{weatherData.feelsLike}°C</p>
+                            <p>{feelsLike}°C</p>
                           </div>
                           <div className="col-8">
                             <p>Humidty</p>
