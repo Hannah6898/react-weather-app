@@ -5,34 +5,25 @@ import "./CurrentWeather.css";
 
 export default function CurrentWeather() {
   const [city, setCity] = useState(null);
-  const [cityUpdate, setCityUpdate] = useState("London");
-  const [description, setDescription] = useState("Sunny");
-  const [currentTemp, setCurrentTemp] = useState("10");
-  const [minTemp, setMinTemp] = useState("5");
-  const [maxTemp, setMaxTemp] = useState("15");
-  const [humidity, setHumidity] = useState("50");
-  const [wind, setWind] = useState("2");
-  const [feelsLike, setFeelsLike] = useState("10");
-  const [icon, setIcon] = useState(sun);
+  const [weatherData, setWeatherData] = useState({});
 
-  let weatherData = {
+  let date = {
     date: "Thur 11 Mar",
     time: "19:00",
   };
 
   function showLocationInfo(response) {
-    let currentWeather = response.data;
-    setCityUpdate(currentWeather.name);
-    setDescription(currentWeather.weather[0].description);
-    setCurrentTemp(Math.round(currentWeather.main.temp));
-    setMinTemp(Math.round(currentWeather.main.temp_min));
-    setMaxTemp(Math.round(currentWeather.main.temp_max));
-    setHumidity(currentWeather.main.humidity);
-    setWind(Math.round(currentWeather.wind.speed));
-    setFeelsLike(Math.round(currentWeather.main.feels_like));
-    setIcon(
-      `http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`
-    );
+    setWeatherData({
+      cityName: response.data.name,
+      description: response.data.weather[0].description,
+      currentTemp: Math.round(response.data.main.temp),
+      minTemp: Math.round(response.data.main.temp_min),
+      maxTemp: Math.round(response.data.main.temp_max),
+      humidity: response.data.main.humidity,
+      wind: Math.round(response.data.wind.speed),
+      feelsLike: Math.round(response.data.main.feels_like),
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+    });
   }
 
   function handleSubmit(event) {
@@ -75,18 +66,18 @@ export default function CurrentWeather() {
           </div>
         </div>
 
-        <h1>{weatherData.date}</h1>
+        <h1>{date.date}</h1>
         <div className="Location">
           <div className="city-name">
             <i className="fas fa-map-marker-alt"></i>
             <span> </span>
-            <h2>{cityUpdate}</h2>
+            <h2>{weatherData.cityName}</h2>
           </div>
         </div>
-        <h3>{weatherData.time}</h3>
-        <img src={icon} alt="icon" />
+        <h3>{date.time}</h3>
+        <img src={weatherData.icon} alt="icon" />
         <div className="description">
-          <span>{description}</span>
+          <span>{weatherData.description}</span>
         </div>
         <div className="row">
           <div className="CurrentTemp">
@@ -95,18 +86,18 @@ export default function CurrentWeather() {
                 <div className="col-6">
                   <div className="row">
                     <div className="col">
-                      <h4>{currentTemp}°C</h4>
+                      <h4>{weatherData.currentTemp}°C</h4>
                     </div>
                   </div>
                   <div className="row">
                     <div className="col-4 current-temps">
-                      <p>{minTemp}°C</p>
+                      <p>{weatherData.minTemp}°C</p>
                     </div>
                     <div className="col-4 current-temps">
                       <p>|</p>
                     </div>
                     <div className="col-4 current-temps">
-                      <p className="max-temp">{maxTemp}°C</p>
+                      <p className="max-temp">{weatherData.maxTemp}°C</p>
                     </div>
                   </div>
                 </div>
@@ -123,19 +114,19 @@ export default function CurrentWeather() {
                             <p>Feels Like</p>
                           </div>
                           <div className="col-4">
-                            <p>{feelsLike}°C</p>
+                            <p>{weatherData.feelsLike}°C</p>
                           </div>
                           <div className="col-8">
                             <p>Humidty</p>
                           </div>
                           <div className="col-4">
-                            <p>{humidity}%</p>
+                            <p>{weatherData.humidity}%</p>
                           </div>
                           <div className="col-8">
                             <p>Wind</p>
                           </div>
                           <div className="col-4">
-                            <p>{wind}m/s</p>
+                            <p>{weatherData.wind}m/s</p>
                           </div>
                         </div>
                       </div>
