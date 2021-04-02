@@ -2,23 +2,34 @@ import React, { useState } from "react";
 import sun from "./sun.png";
 import axios from "axios";
 
-import CurrentTemp from "./CurrentTemp";
-
 import "./CurrentWeather.css";
 export default function CurrentWeather() {
   const [city, onCity] = useState(null);
   const [cityUpdate, onCityUpdate] = useState(null);
   const [description, onDescription] = useState(null);
+  const [currentTemp, setCurrentTemp] = useState(null);
+  const [minTemp, setMinTemp] = useState(null);
+  const [maxTemp, setMaxTemp] = useState(null);
+  const [humidity, setHumidity] = useState(null);
+  const [wind, setWind] = useState(null);
 
   let weatherData = {
     date: "Thur 11 Mar",
     time: "19:00",
+    feelsLike: "9",
+    humidty: "53",
+    wind: "8",
   };
 
   function showLocationInfo(response) {
-    console.log(response.data.weather[0].description);
+    console.log(response.data.main.temp);
     onCityUpdate(response.data.name);
     onDescription(response.data.weather[0].description);
+    setCurrentTemp(Math.round(response.data.main.temp));
+    setMinTemp(Math.round(response.data.main.temp_min));
+    setMaxTemp(Math.round(response.data.main.temp_max));
+    setHumidity(response.data.main.humidity);
+    setWind(Math.round(response.data.wind.speed));
   }
 
   function handleSubmit(event) {
@@ -77,7 +88,62 @@ export default function CurrentWeather() {
           <span>{description}</span>
         </div>
         <div className="row">
-          <CurrentTemp />
+          <div className="CurrentTemp">
+            <div className="row">
+              <div className="row">
+                <div className="col-6">
+                  <div className="row">
+                    <div className="col">
+                      <h4>{currentTemp}°C</h4>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-4 current-temps">
+                      <p>{minTemp}°C</p>
+                    </div>
+                    <div className="col-4 current-temps">
+                      <p>|</p>
+                    </div>
+                    <div className="col-4 current-temps">
+                      <p className="max-temp">{maxTemp}°C</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-6">
+                  <div className="Details">
+                    <div className="col">
+                      <div className="row">
+                        <div className="col">
+                          <h5>Details</h5>
+                          <hr />
+                        </div>
+                        <div className="row details">
+                          <div className="col-8">
+                            <p>Feels Like</p>
+                          </div>
+                          <div className="col-4">
+                            <p>{weatherData.feelsLike}°C</p>
+                          </div>
+                          <div className="col-8">
+                            <p>Humidty</p>
+                          </div>
+                          <div className="col-4">
+                            <p>{humidity}%</p>
+                          </div>
+                          <div className="col-8">
+                            <p>Wind</p>
+                          </div>
+                          <div className="col-4">
+                            <p>{wind}m/s</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </form>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
