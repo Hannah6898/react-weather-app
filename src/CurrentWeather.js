@@ -1,19 +1,16 @@
 import React, { useState } from "react";
-import sun from "./sun.png";
 import axios from "axios";
+import FormatDate from "./FormatDate";
 import "./CurrentWeather.css";
 
 export default function CurrentWeather() {
   const [city, setCity] = useState(null);
   const [weatherData, setWeatherData] = useState({});
 
-  let date = {
-    date: "Thur 11 Mar",
-    time: "19:00",
-  };
-
   function showLocationInfo(response) {
     setWeatherData({
+      date: new Date(response.data.dt * 1000),
+      time: "19:00",
       cityName: response.data.name,
       description: response.data.weather[0].description,
       currentTemp: Math.round(response.data.main.temp),
@@ -66,7 +63,9 @@ export default function CurrentWeather() {
           </div>
         </div>
 
-        <h1>{date.date}</h1>
+        <h1>
+          <FormatDate date={weatherData.date} />
+        </h1>
         <div className="Location">
           <div className="city-name">
             <i className="fas fa-map-marker-alt"></i>
@@ -74,8 +73,8 @@ export default function CurrentWeather() {
             <h2>{weatherData.cityName}</h2>
           </div>
         </div>
-        <h3>{date.time}</h3>
-        <img src={weatherData.icon} alt="icon" />
+        <h3>{weatherData.time}</h3>
+        <img src={weatherData.icon} alt={weatherData.description} />
         <div className="description">
           <span>{weatherData.description}</span>
         </div>
