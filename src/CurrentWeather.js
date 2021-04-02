@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormatDate from "./FormatDate";
 import "./CurrentWeather.css";
 
 export default function CurrentWeather() {
@@ -9,7 +8,7 @@ export default function CurrentWeather() {
 
   function showLocationInfo(response) {
     setWeatherData({
-      date: new Date(response.data.dt * 1000),
+      date: "Thur 8 Apr",
       time: "19:00",
       cityName: response.data.name,
       description: response.data.weather[0].description,
@@ -63,9 +62,7 @@ export default function CurrentWeather() {
           </div>
         </div>
 
-        <h1>
-          <FormatDate date={weatherData.date} />
-        </h1>
+        <h1>{weatherData.date}</h1>
         <div className="Location">
           <div className="city-name">
             <i className="fas fa-map-marker-alt"></i>
