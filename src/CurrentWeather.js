@@ -4,9 +4,9 @@ import axios from "axios";
 import "./CurrentWeather.css";
 
 export default function CurrentWeather() {
-  const [city, onCity] = useState(null);
-  const [cityUpdate, onCityUpdate] = useState("London");
-  const [description, onDescription] = useState("Sunny");
+  const [city, setCity] = useState(null);
+  const [cityUpdate, setCityUpdate] = useState("London");
+  const [description, setDescription] = useState("Sunny");
   const [currentTemp, setCurrentTemp] = useState("10");
   const [minTemp, setMinTemp] = useState("5");
   const [maxTemp, setMaxTemp] = useState("15");
@@ -22,8 +22,8 @@ export default function CurrentWeather() {
 
   function showLocationInfo(response) {
     let currentWeather = response.data;
-    onCityUpdate(currentWeather.name);
-    onDescription(currentWeather.weather[0].description);
+    setCityUpdate(currentWeather.name);
+    setDescription(currentWeather.weather[0].description);
     setCurrentTemp(Math.round(currentWeather.main.temp));
     setMinTemp(Math.round(currentWeather.main.temp_min));
     setMaxTemp(Math.round(currentWeather.main.temp_max));
@@ -44,7 +44,7 @@ export default function CurrentWeather() {
   }
 
   function updateCity(event) {
-    onCity(event.target.value);
+    setCity(event.target.value);
   }
 
   return (
