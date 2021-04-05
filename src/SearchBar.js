@@ -12,7 +12,7 @@ export default function SearchBar(props) {
     setReady(true);
     setWeatherData({
       date: new Date(response.data.dt * 1000),
-      time: "19:00",
+      time: new Date(response.data.dt * 1000),
       cityName: response.data.name,
       description: response.data.weather[0].description,
       currentTemp: Math.round(response.data.main.temp),
@@ -35,7 +35,7 @@ export default function SearchBar(props) {
   }
 
   function search() {
-    const apiKey = "9949a4027ac8b116bb6aff55d501ba46";
+    const apiKey = "b79b0225475a81e40d7c313bd2945286";
     let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(showLocationInfo);

@@ -1,5 +1,6 @@
 import React from "react";
 import FormatDate from "./FormatDate";
+import FormatHours from "./FormatHours";
 import "./CurrentWeather.css";
 
 export default function CurrentWeather(props) {
@@ -15,7 +16,9 @@ export default function CurrentWeather(props) {
           <h2>{props.data.cityName}</h2>
         </div>
       </div>
-      <h3>{props.data.time}</h3>
+      <h3>
+        <FormatHours date={props.data.time} />
+      </h3>
       <img src={props.data.icon} alt={props.data.description} />
       <div className="description">
         <span>{props.data.description}</span>
