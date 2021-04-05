@@ -1,11 +1,11 @@
 import "./App.css";
-import CurrentWeather from "./CurrentWeather";
+import SearchBar from "./SearchBar";
 import Forecast from "./Forecast";
 
 function App() {
   return (
     <div className="App">
-      <CurrentWeather />
+      <SearchBar defaultcity="London" />
       <Forecast />
     </div>
   );
