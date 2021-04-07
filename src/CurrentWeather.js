@@ -17,7 +17,7 @@ export default function CurrentWeather(props) {
         </div>
       </div>
       <h3>
-        <FormatHours date={props.data.time} />
+        <FormatHours time={props.data.time} />
       </h3>
       <img src={props.data.icon} alt={props.data.description} />
       <div className="description">

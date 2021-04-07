@@ -4,13 +4,12 @@ import "./CurrentWeather.css";
 import CurrentWeather from "./CurrentWeather";
 
 export default function SearchBar(props) {
-  const [ready, setReady] = useState(false);
   const [city, setCity] = useState(props.defaultcity);
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
   function showLocationInfo(response) {
-    setReady(true);
     setWeatherData({
+      ready: true,
       date: new Date(response.data.dt * 1000),
       time: new Date(response.data.dt * 1000),
       cityName: response.data.name,
@@ -41,7 +40,7 @@ export default function SearchBar(props) {
     axios.get(apiUrl).then(showLocationInfo);
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div className="CurrentWeather">
         <form onSubmit={handleSubmit}>

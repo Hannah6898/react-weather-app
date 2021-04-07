@@ -1,8 +1,8 @@
 import React from "react";
 
 export default function FormatHours(props) {
-  let hours = props.date.getHours();
-  let mintues = props.date.getMintues();
+  let hours = props.time.getHours();
+  let mintues = props.time.getMintues();
 
   if (hours < 10) {
     hours = `0${hours}`;
