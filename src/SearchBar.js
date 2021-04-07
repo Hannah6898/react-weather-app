@@ -11,7 +11,7 @@ export default function SearchBar(props) {
     setWeatherData({
       ready: true,
       date: new Date(response.data.dt * 1000),
-      time: new Date(response.data.dt * 1000),
+      time: "19:00",
       cityName: response.data.name,
       description: response.data.weather[0].description,
       currentTemp: Math.round(response.data.main.temp),
