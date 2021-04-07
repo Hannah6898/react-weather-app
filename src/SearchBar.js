@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./CurrentWeather.css";
 import CurrentWeather from "./CurrentWeather";
+import Loader from "react-loader-spinner";
 
 export default function SearchBar(props) {
   const [city, setCity] = useState(props.defaultcity);
@@ -40,10 +41,23 @@ export default function SearchBar(props) {
     axios.get(apiUrl).then(showLocationInfo);
   }
 
+  function handleClick(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(searchLocation);
+  }
+
+  function searchLocation(position) {
+    let lat = position.coords.latitude;
+    let long = position.coords.longitude;
+    const apiKey = "b79b0225475a81e40d7c313bd2945286";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showLocationInfo);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="CurrentWeather">
-        <form onSubmit={handleSubmit}>
+        <form>
           <div className="input-group mb-3 search-bar">
             <input
               id="city-text"
@@ -55,6 +69,7 @@ export default function SearchBar(props) {
             />
             <div className="search-btn">
               <button
+                onClick={handleSubmit}
                 className="btn btn-outline-secondary"
                 type="sumbit"
                 id="Search-btn"
@@ -63,7 +78,11 @@ export default function SearchBar(props) {
               </button>
             </div>
             <div className="current-btn">
-              <button id="current-location" className="btn current-location">
+              <button
+                onClick={handleClick}
+                id="current-location"
+                className="btn current-location"
+              >
                 Current <br /> Location
               </button>
             </div>
@@ -75,6 +94,14 @@ export default function SearchBar(props) {
     );
   } else {
     search();
-    return "Loading...";
+    return (
+      <Loader
+        type="ThreeDots"
+        color="white"
+        height={60}
+        width={100}
+        timeout={3000} //3 secs
+      />
+    );
   }
 }
