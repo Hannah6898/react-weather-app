@@ -1,5 +1,6 @@
 import React from "react";
 import FormatDate from "./FormatDate";
+import FormatHours from "./FormatHours";
 
 import "./WeatherApp";
 
@@ -13,7 +14,9 @@ export default function CurrentWeather(props) {
         <div className="city-name">
           <i className="fas fa-map-marker-alt"></i>
           <span> </span>
-          <h2>{props.data.cityName}</h2>
+          <h2>
+            <FormatHours time={props.data.date} />
+          </h2>
         </div>
       </div>
       <h3>{props.data.time}</h3>

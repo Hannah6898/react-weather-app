@@ -11,8 +11,6 @@ export default function WeatherApp(props) {
   function showLocationInfo(response) {
     setWeatherData({
       ready: true,
-      date: new Date(response.data.dt * 1000),
-      time: "19:00",
       cityName: response.data.name,
       description: response.data.weather[0].description,
       currentTemp: Math.round(response.data.main.temp),
@@ -22,6 +20,7 @@ export default function WeatherApp(props) {
       wind: Math.round(response.data.wind.speed),
       feelsLike: Math.round(response.data.main.feels_like),
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      date: new Date(response.data.dt * 1000),
     });
   }
 
