@@ -2,7 +2,7 @@ import React from "react";
 
 export default function FormatHours(props) {
   let hours = props.time.getHours();
-  let mintues = props.time.getMintues();
+  let mintues = props.time.getMinutes();
 
   if (hours < 10) {
     hours = `0${hours}`;
