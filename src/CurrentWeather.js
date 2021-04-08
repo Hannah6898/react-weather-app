@@ -14,12 +14,12 @@ export default function CurrentWeather(props) {
         <div className="city-name">
           <i className="fas fa-map-marker-alt"></i>
           <span> </span>
-          <h2>
-            <FormatHours time={props.data.date} />
-          </h2>
+          <h2>{props.data.cityName}</h2>
         </div>
       </div>
-      <h3>{props.data.time}</h3>
+      <h3>
+        <FormatHours time={props.data.date} />
+      </h3>
       <img src={props.data.icon} alt={props.data.description} />
       <div className="description">
         <span>{props.data.description}</span>
