@@ -1,33 +1,33 @@
-.CurrentWeather .search-bar {
+.WeatherApp .search-bar {
   width: 90%;
   margin: 20px;
   padding-top: 10px;
   border: none;
 }
 
-.CurrentWeather .btn {
+.WeatherApp .btn {
   background-color: white !important;
   color: #634cff !important;
   border: none;
   transition: all 2ms ease-in-out;
 }
 
-.CurrentWeather .current-btn,
+.WeatherApp .current-btn,
 .search-btn {
   margin-left: 10px !important;
 }
 
-.CurrentWeather .btn:hover {
+.WeatherApp .btn:hover {
   background: #634cff !important;
   color: white !important;
   border: white !important;
 }
 
-.CurrentWeather .current-location {
+.WeatherApp .current-location {
   font-size: 8px;
 }
 
-.CurrentWeather h1 {
+.WeatherApp h1 {
   display: block;
   text-align: center;
   padding-top: 10px;
@@ -35,76 +35,72 @@
   color: white;
 }
 
-.CurrentWeather .Location {
+.WeatherApp .Location {
   text-align: center;
   color: white;
 }
 
-.CurrentWeather h2 {
+.WeatherApp h2 {
   display: inline-block;
   font-size: 20px !important;
   text-align: center;
 }
 
-.CurrentWeather i {
+.WeatherApp i {
   font-size: 18px;
 }
 
-.CurrentWeather h3 {
+.WeatherApp h3 {
   display: block;
   text-align: center;
   font-size: 18px !important;
   color: white;
 }
 
-.CurrentWeather img {
+.WeatherApp img {
   display: block;
   margin: 0 auto;
   width: 100px;
 }
 
-.CurrentWeather .description {
+.WeatherApp .description {
   margin: 10px 0 20px 0;
   text-align: center;
   color: white;
   text-transform: capitalize;
 }
 
-.CurrentTemp {
+.WeatherApp {
   color: white;
 }
 
-.CurrentTemp h4 {
+.WeatherApp h4 {
   display: inline-block;
   font-size: 62px !important;
   padding-left: 43px;
 }
 
-.CurrentTemp .current-temps p {
+.WeatherApp .current-temps p {
   text-align: center;
   font-size: 25px;
   padding-left: 10px;
 }
 
-.CurrentTemp .max-temp {
+.WeatherApp .max-temp {
   position: relative;
   right: 15px;
 }
 
-.WeatherDetails hr {
+.WeatherApp hr {
   color: #1b115f !important;
   height: 2px !important;
   width: 80%;
 }
 
-.details p {
+.WeatherApp .details p {
   margin: 0;
 }
 
-.WeatherDetails h5 {
+.WeatherApp h5 {
   font-size: 20px;
-}
-
-.Current Loader {
-  text-align: center;
 }

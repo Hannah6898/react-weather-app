@@ -1,7 +1,7 @@
 import React from "react";
 import FormatDate from "./FormatDate";
 
-import "./CurrentWeather.css";
+import "./WeatherApp";
 
 export default function CurrentWeather(props) {
   return (

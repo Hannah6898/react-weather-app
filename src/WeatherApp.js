@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./CurrentWeather.css";
+import "./WeatherApp.css";
 import CurrentWeather from "./CurrentWeather";
 import Loader from "react-loader-spinner";
 
-export default function SearchBar(props) {
+export default function WeatherApp(props) {
   const [city, setCity] = useState(props.defaultcity);
   const [weatherData, setWeatherData] = useState({ ready: false });
 
@@ -56,7 +56,7 @@ export default function SearchBar(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="CurrentWeather">
+      <div className="WeatherApp">
         <form>
           <div className="input-group mb-3 search-bar">
             <input
