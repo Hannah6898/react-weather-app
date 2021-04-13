@@ -3,6 +3,7 @@ import axios from "axios";
 import "./WeatherApp.css";
 import CurrentWeather from "./CurrentWeather";
 import Loader from "react-loader-spinner";
+import Forecast from "./Forecast";
 
 export default function WeatherApp(props) {
   const [city, setCity] = useState(props.defaultcity);
@@ -21,7 +22,9 @@ export default function WeatherApp(props) {
       feelsLike: Math.round(response.data.main.feels_like),
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       date: new Date(response.data.dt * 1000),
+      coord: response.data.coord,
     });
+    console.log(response.data);
   }
 
   function handleSubmit(event) {
@@ -89,6 +92,7 @@ export default function WeatherApp(props) {
 
           <CurrentWeather data={weatherData} />
         </form>
+        <Forecast coordinates={weatherData} />
       </div>
     );
   } else {

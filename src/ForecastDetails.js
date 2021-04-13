@@ -4,11 +4,12 @@ import sun from "./sun.png";
 import "./ForecastDetails.css";
 
 export default function ForecastDetails(props) {
+  console.log(props.data);
   return (
     <div className="col-2 ForecastDetails">
       <div className="row">
         <div className="col-12">
-          <p>{props.day}</p>
+          <p>day</p>
         </div>
         <div className="col-12">
           <div className="CurrentWeatherIcon">
@@ -16,9 +17,7 @@ export default function ForecastDetails(props) {
           </div>
         </div>
         <div className="col-12">
-          <p className="temp">
-            {props.minTemp}°|{props.maxTemp}°
-          </p>
+          <p className="temp">min°|max°</p>
         </div>
       </div>
     </div>
