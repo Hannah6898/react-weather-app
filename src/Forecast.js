@@ -10,15 +10,19 @@ export default function Forecast(props) {
 
   function handleResponse(response) {
     console.log(response.data);
-    setLoaded(true);
     setForecast(response.data.daily);
+    setLoaded(true);
   }
 
   if (loaded) {
     return (
       <div className="Forecast">
         <div className="row">
-          <ForecastDetails data={forecast[0]} />
+          <ForecastDetails data={forecast[1]} />
+          <ForecastDetails data={forecast[2]} />
+          <ForecastDetails data={forecast[3]} />
+          <ForecastDetails data={forecast[4]} />
+          <ForecastDetails data={forecast[5]} />
         </div>
       </div>
     );

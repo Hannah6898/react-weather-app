@@ -14,20 +14,33 @@ export default function ForecastDetails(props) {
     return `${tempMax}`;
   }
 
+  function date() {
+    let date = new Date(props.data.dt * 1000);
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    let day = days[date.getDay()];
+    return `${day}`;
+  }
+
+  function icon() {
+    let iconCode = props.data.weather.icon;
+    let weatherIcon = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    return `${weatherIcon}`;
+  }
+
   return (
     <div className="col-2 ForecastDetails">
       <div className="row">
         <div className="col-12">
-          <p>hi</p>
+          <p>{date()}</p>
         </div>
         <div className="col-12">
           <div className="CurrentWeatherIcon">
-            <img src={sun} alt="sun" />
+            <img src={sun} alt="icon" />
           </div>
         </div>
         <div className="col-12">
           <p className="temp">
-            {minTemp()}°|{maxTemp()}°
+            {minTemp()}°| {maxTemp()}°
           </p>
         </div>
       </div>
