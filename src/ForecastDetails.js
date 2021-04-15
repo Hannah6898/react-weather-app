@@ -21,11 +21,8 @@ export default function ForecastDetails(props) {
     return `${day}`;
   }
 
-  function icon() {
-    let iconCode = props.data.weather.icon;
-    let weatherIcon = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
-    return `${weatherIcon}`;
-  }
+  let iconCode = props.data.weather[0].icon;
+  let weatherIcon = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
   return (
     <div className="col-2 ForecastDetails">
@@ -35,7 +32,7 @@ export default function ForecastDetails(props) {
         </div>
         <div className="col-12">
           <div className="CurrentWeatherIcon">
-            <img src={sun} alt="icon" />
+            <img src={weatherIcon} alt="icon" />
           </div>
         </div>
         <div className="col-12">
