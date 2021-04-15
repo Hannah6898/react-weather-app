@@ -17,13 +17,7 @@ export default function Footer() {
           <span> </span>
           by
           <span> </span>
-          <a
-            href="https://www.hannahosibodu.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Hannah Osibodu
-          </a>
+          Hannah Osibodu
         </p>
       </small>
     </div>

@@ -1,17 +1,17 @@
-.ForecastDetails {
+.Dailyforecast {
   color: white;
   margin-left: 14px;
   color: black;
 }
 
-.ForecastDetails img {
+.Dailyforecast img {
   width: 50px;
   position: relative;
   right: 10px;
   bottom: 10px;
 }
 
-.ForecastDetails .temp {
+.Dailyforecast .temp {
   position: relative;
   right: 3px;
   font-size: 13px;

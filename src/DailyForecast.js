@@ -1,7 +1,6 @@
 import React from "react";
-import sun from "./sun.png";
 
-import "./ForecastDetails.css";
+import "./DailyForecast.css";
 
 export default function ForecastDetails(props) {
   function minTemp() {
@@ -25,7 +24,7 @@ export default function ForecastDetails(props) {
   let weatherIcon = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
   return (
-    <div className="col-2 ForecastDetails">
+    <div className="col-2 Dailyforecast">
       <div className="row">
         <div className="col-12">
           <p>{date()}</p>
@@ -37,7 +36,7 @@ export default function ForecastDetails(props) {
         </div>
         <div className="col-12">
           <p className="temp">
-            {minTemp()}°| {maxTemp()}°
+            {minTemp()}°| <strong>{maxTemp()}°</strong>
           </p>
         </div>
       </div>
