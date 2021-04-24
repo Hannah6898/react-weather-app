@@ -7,17 +7,25 @@ export default function Footer() {
     <div className="Footer">
       <small>
         <p>
+          This project was coded by
+          <span> </span>
           <a
-            href="https://github.com/Hannah6898/Weather-app"
+            href="https://www.hannahosibodu.com/"
             target="_blank"
             rel="noreferrer"
           >
-            Open Souce code
+            Hannah Osibodu
           </a>
           <span> </span>
-          by
+          and is
           <span> </span>
-          Hannah Osibodu
+          <a
+            href="https://github.com/Hannah6898/react-weather-app"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open sourced
+          </a>
         </p>
       </small>
     </div>
