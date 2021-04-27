@@ -54,7 +54,7 @@ export default function CurrentWeather(props) {
                         <h5>Details</h5>
                         <hr />
                       </div>
-                      <div className="row details">
+                      <div className="row details-info">
                         <div className="col-8">
                           <p>Feels Like</p>
                         </div>

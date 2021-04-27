@@ -76,8 +76,8 @@
 
 .WeatherApp h4 {
   display: inline-block;
-  font-size: 62px !important;
-  padding-left: 43px;
+  font-size: 60px !important;
+  padding-left: 28px;
 }
 
 .WeatherApp .current-temps p {
@@ -97,10 +97,14 @@
   width: 80%;
 }
 
-.WeatherApp .details p {
+.WeatherApp .details-info p {
   margin: 0;
 }
 
 .WeatherApp h5 {
   font-size: 20px;
+}
+
+.WeatherApp .Details {
+  padding-left: 10px;
 }
