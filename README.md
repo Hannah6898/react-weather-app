@@ -6,11 +6,11 @@ A React Weather app utilising the Open Weather Map API hosted on Netfliy.
 
 ### 1. [About Project](#about-project)
 
-### 2. Built with
+### 2. [Built with](#built-with)
 
-### 3. Lessons Learnt
+### 3. [Lessons Learnt](#lessons-learnt)
 
-### 4. Future Work
+### 4. [Future Work](future-work)
 
 ## About Project
 
@@ -19,7 +19,7 @@ This project was built as part of SheCodes coding bootcamp I partook in. Through
 • Used useEffect to call the data in an asynchronous way for the weather forecast.\
 • Used .map() to manipulate the JSON file received from the API.\
 • Used axios to make a call to the weather API.\
-• Used Geolocation to determine the users weather for their current location.\
+• Used Geolocation to determine the users weather for their current location.
 
 ## Built with
 
@@ -30,7 +30,7 @@ This project was built as part of SheCodes coding bootcamp I partook in. Through
 • [React loader spinner](https://www.npmjs.comaxi/package/react-loader-spinner)\
 • [Google Fonts](https://fonts.google.com/)\
 • [Font awesome](https://fontawesome.com/)\
-• HTML/ CSS / JavaScript\
+• HTML/ CSS / JavaScript
 
 ## Lessons Learnt
 
