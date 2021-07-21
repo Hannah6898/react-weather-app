@@ -1,3 +1,26 @@
+## React Weather App
+
+A React Weather app utilising the Open Weather Map API hosted on Netfliy.
+
+## Contents
+
+1. ### About Project
+2. ### Built with
+3. ### Features
+4. ### React
+5. ### SEO
+6. ### Future Work
+7. ### Contact
+8. ### Acknowledgements
+
+About Project (#about-project)
+This project was built as part of SheCodes coding bootcamp I partook in. Through creating this project I was able to familiarise myself with core concepts I had been learning.
+• Used useEffect to call the data in an asynchronous way for the weather forecast
+• Used .map() to manipulate the JSON file received from the API
+• Used axios to make a call to the weather API
+• Used Geolocation to determine the users weather for their current location.  
+• Used Props and useState to display weather information in app.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
