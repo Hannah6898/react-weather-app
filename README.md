@@ -1,17 +1,24 @@
-## React Weather App
+# React Weather App
 
 A React Weather app utilising the Open Weather Map API hosted on Netfliy.
 
 ## Contents
 
-1. # About Project
-2. # Built with
-3. # Features
-4. # React
-5. # SEO
-6. # Future Work
-7. # Contact
-8. # Acknowledgements
+### 1. About Project
+
+### 2. Built with
+
+### 3. Features
+
+### 4. React
+
+### 5. SEO
+
+### 6. Future Work
+
+### 7. Contact
+
+### 8. Acknowledgements
 
 ## About Project (#about-project)
 
