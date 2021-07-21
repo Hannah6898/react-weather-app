@@ -25,21 +25,21 @@ This project was built as part of SheCodes coding bootcamp I partook in. Through
 
 ## Built with
 
-• [https://reactjs.org/](React.js)
-• Google Fonts
-• Bootstrap
-• API
-• Font awesome
-• React loader spinner
-• Axios
-• HTML/ CSS / JavaScript
+• [React.js](https://reactjs.org/).\
+• Google Fonts.\
+• Bootstrap.\
+• API.\
+• Font awesome.\
+• React loader spinner.\
+• Axios.\
+• HTML/ CSS / JavaScript.\
 
 ## Lessons Learnt
 
-Having finished this project, here are some key areas I feel I've developed in:
-• Making API calls and manipulating response data.
-• Components, passing state and props to render.
-• Creating layouts and components using Bootstrap
+Having finished this project, here are some key areas I feel I've developed in:.\
+• Making API calls and manipulating response data.\
+• Components, passing state and props to render.\
+• Creating layouts and components using Bootstrap.\
 
 ## Future Work
 
@@ -47,9 +47,9 @@ Having finished this project, here are some key areas I feel I've developed in:
 
 ## Acknowledgment
 
-Open Weather API
-Axios
-Bootstrap
+Open Weather API.\
+Axios.\
+Bootstrap.\
 
 # Getting Started with Create React App
 
