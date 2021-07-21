@@ -25,7 +25,7 @@ This project was built as part of SheCodes coding bootcamp I partook in. Through
 
 ## Built with
 
-• [React JS](https://reactjs.org/)
+• [https://reactjs.org/](React.js)
 • Google Fonts
 • Bootstrap
 • API
