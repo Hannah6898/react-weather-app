@@ -1,33 +1,33 @@
-.WeatherApp .search-bar {
+.weather-app .search-bar {
   width: 90%;
   margin: 20px;
   padding-top: 10px;
   border: none;
 }
 
-.WeatherApp .btn {
+.weather-app .btn {
   background-color: white !important;
   color: #634cff !important;
   border: none;
   transition: all 0.4s ease-in-out;
 }
 
-.WeatherApp .current-btn,
+.weather-app .current-btn,
 .search-btn {
   margin-left: 10px !important;
 }
 
-.WeatherApp .btn:hover {
+.weather-app .btn:hover {
   background: #634cff !important;
   color: white !important;
   border: white !important;
 }
 
-.WeatherApp .current-location {
+.weather-app .current-location {
   font-size: 8px;
 }
 
-.WeatherApp h1 {
+.weather-app h1 {
   display: block;
   text-align: center;
   padding-top: 10px;
@@ -35,76 +35,76 @@
   color: white;
 }
 
-.WeatherApp .Location {
+.weather-app .Location {
   text-align: center;
   color: white;
 }
 
-.WeatherApp h2 {
+.weather-app h2 {
   display: inline-block;
   font-size: 20px !important;
   text-align: center;
 }
 
-.WeatherApp i {
+.weather-app i {
   font-size: 18px;
 }
 
-.WeatherApp h3 {
+.weather-app h3 {
   display: block;
   text-align: center;
   font-size: 18px !important;
   color: white;
 }
 
-.WeatherApp img {
+.weather-app img {
   display: block;
   margin: 0 auto;
   width: 100px;
 }
 
-.WeatherApp .description {
+.weather-app .description {
   margin: 10px 0 20px 0;
   text-align: center;
   color: white;
   text-transform: capitalize;
 }
 
-.WeatherApp {
+.weather-app {
   color: white;
 }
 
-.WeatherApp h4 {
+.weather-app h4 {
   display: inline-block;
   font-size: 60px !important;
   padding-left: 28px;
 }
 
-.WeatherApp .current-temps p {
+.weather-app .current-temps p {
   text-align: center;
   font-size: 25px;
   padding-left: 10px;
 }
 
-.WeatherApp .max-temp {
+.weather-app .max-temp {
   position: relative;
   right: 15px;
 }
 
-.WeatherApp hr {
+.weather-app hr {
   color: #1b115f !important;
   height: 2px !important;
   width: 80%;
 }
 
-.WeatherApp .details-info p {
+.weather-app .details-info p {
   margin: 0;
 }
 
-.WeatherApp h5 {
+.weather-app h5 {
   font-size: 20px;
 }
 
-.WeatherApp .Details {
+.weather-app .Details {
   padding-left: 10px;
 }

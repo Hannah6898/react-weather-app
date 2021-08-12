@@ -3,7 +3,7 @@ import WeatherApp from "./WeatherApp/WeatherApp";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <WeatherApp defaultcity="London" />
     </div>
   );

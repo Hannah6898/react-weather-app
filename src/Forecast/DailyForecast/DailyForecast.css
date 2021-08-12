@@ -1,16 +1,16 @@
-.Dailyforecast {
+.daily-forecast {
   margin: 0 auto;
   color: black;
 }
 
-.Dailyforecast img {
+.daily-forecast img {
   width: 50px;
   position: relative;
   right: 10px;
   bottom: 10px;
 }
 
-.Dailyforecast .temp {
+.daily-forecast .temp {
   position: relative;
   right: 3px;
   font-size: 12px;

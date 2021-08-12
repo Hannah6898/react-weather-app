@@ -5,7 +5,7 @@ import "./WeatherApp";
 
 export default function CurrentWeather(props) {
   return (
-    <div className="WeatherApp">
+    <div className="weather-app">
       <h1>
         <FormatDate date={props.data.date} />
       </h1>

@@ -58,7 +58,7 @@ export default function WeatherApp(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="WeatherApp">
+      <div className="weather-app">
         <form>
           <div className="input-group mb-3 search-bar">
             <input
@@ -68,6 +68,7 @@ export default function WeatherApp(props) {
               placeholder="City"
               autoComplete="off"
               onChange={updateCity}
+              aria-label="city"
             />
             <div className="search-btn">
               <button
@@ -75,6 +76,7 @@ export default function WeatherApp(props) {
                 className="btn btn-outline-secondary"
                 type="sumbit"
                 id="Search-btn"
+                aria-label="search"
               >
                 Search
               </button>
@@ -84,6 +86,7 @@ export default function WeatherApp(props) {
                 onClick={handleClick}
                 id="current-location"
                 className="btn current-location"
+                aria-label="current location"
               >
                 Current <br /> Location
               </button>

@@ -23,7 +23,7 @@ export default function ForecastDetails(props) {
   let weatherIcon = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
   return (
-    <div className="col-2 Dailyforecast">
+    <div className="col-2 daily-forecast">
       <div className="row">
         <div className="col-12">
           <p>{date()}</p>
