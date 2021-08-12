@@ -9,7 +9,7 @@
   background-color: white !important;
   color: #634cff !important;
   border: none;
-  transition: all 2ms ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .WeatherApp .current-btn,
