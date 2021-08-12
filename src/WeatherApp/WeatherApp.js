@@ -3,7 +3,7 @@ import axios from "axios";
 import "./WeatherApp.css";
 import CurrentWeather from "./CurrentWeather";
 import Loader from "react-loader-spinner";
-import Forecast from "./Forecast";
+import Forecast from "../Forecast/Forecast";
 
 export default function WeatherApp(props) {
   const [city, setCity] = useState(props.defaultcity);

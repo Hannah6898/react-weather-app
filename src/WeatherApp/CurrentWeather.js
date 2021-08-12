@@ -1,7 +1,6 @@
 import React from "react";
-import FormatDate from "./FormatDate";
-import FormatHours from "./FormatHours";
-
+import FormatDate from "../FormatTime/FormatDate";
+import FormatHours from "../FormatTime/FormatHours";
 import "./WeatherApp";
 
 export default function CurrentWeather(props) {
