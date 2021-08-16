@@ -23,7 +23,7 @@ export default function Forecast(props) {
 
   //This function makes a call to the api
   function load() {
-    let apiKey = "b79b0225475a81e40d7c313bd2945286";
+    let apiKey = process.env.REACT_APP_API_KEY;
     let longitude = props.coordinates.lon;
     let latitude = props.coordinates.lat;
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
