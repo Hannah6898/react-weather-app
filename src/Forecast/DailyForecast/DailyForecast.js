@@ -2,16 +2,19 @@ import React from "react";
 import "./DailyForecast.css";
 
 export default function ForecastDetails(props) {
+  //This function rounds the minimum temperature from the api call
   function minTemp() {
     let tempMin = Math.round(props.data.temp.min);
     return `${tempMin}`;
   }
 
+  //This function rounds the maximum temperature from the api call
   function maxTemp() {
     let tempMax = Math.round(props.data.temp.max);
     return `${tempMax}`;
   }
 
+  //This function formats the date from the api call
   function date() {
     let date = new Date(props.data.dt * 1000);
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];

@@ -6,9 +6,11 @@ import Loader from "react-loader-spinner";
 import Forecast from "../Forecast/Forecast";
 
 export default function WeatherApp(props) {
+  //useState used for when the city name and weather data changes upon the users search
   const [city, setCity] = useState(props.defaultcity);
   const [weatherData, setWeatherData] = useState({ ready: false });
 
+  //This function holds the weather data from the api call
   function showLocationInfo(response) {
     setWeatherData({
       ready: true,
@@ -24,18 +26,20 @@ export default function WeatherApp(props) {
       date: new Date(response.data.dt * 1000),
       coord: response.data.coord,
     });
-    console.log(response.data);
   }
 
+  //When the search button is clicked this function is run. event.preventDefault() prevents the page from reloading upon running the function.
   function handleSubmit(event) {
     event.preventDefault();
     search();
   }
 
+  //When the user types a new city into the input this function collects this value
   function updateCity(event) {
     setCity(event.target.value);
   }
 
+  //This function makes a call to the open weather api using the city name the user searched
   function search() {
     const apiKey = "b79b0225475a81e40d7c313bd2945286";
     let units = "metric";
@@ -43,11 +47,12 @@ export default function WeatherApp(props) {
     axios.get(apiUrl).then(showLocationInfo);
   }
 
+  //When the current location button is clicked this function is run. event.preventDefault() prevents the page from reloading upon running the function.
   function handleClick(event) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(searchLocation);
   }
-
+  //This function makes a call to the open weather api using the users current coordinates
   function searchLocation(position) {
     let lat = position.coords.latitude;
     let long = position.coords.longitude;
@@ -55,7 +60,7 @@ export default function WeatherApp(props) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(showLocationInfo);
   }
-
+  //This if statement states the JSX will load if the ready is set to true else a loader animation will appear
   if (weatherData.ready) {
     return (
       <div className="weather-app">
