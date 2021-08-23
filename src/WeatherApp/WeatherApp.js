@@ -41,7 +41,7 @@ export default function WeatherApp(props) {
 
   //This function makes a call to the open weather api using the city name the user searched
   function search() {
-    const apiKey = process.env.REACT_APP_API_KEY;
+    const apiKey = "b79b0225475a81e40d7c313bd2945286";
     let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(showLocationInfo);
@@ -56,7 +56,7 @@ export default function WeatherApp(props) {
   function searchLocation(position) {
     let lat = position.coords.latitude;
     let long = position.coords.longitude;
-    const apiKey = process.env.REACT_APP_API_KEY;
+    const apiKey = "b79b0225475a81e40d7c313bd2945286";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(showLocationInfo);
   }
