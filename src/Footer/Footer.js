@@ -23,7 +23,7 @@ export default function Footer() {
             target="_blank"
             rel="noreferrer"
           >
-            Open sourced
+            Open sourced.
           </a>
         </p>
       </small>
